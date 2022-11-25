@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\Sushant Aryal\Programming\Project_WEBGIS\Backend\env
+set VIRTUAL_ENV=C:\Users\msi\Desktop\hackerdj\DisasterPortal\env
 
 if not defined PROMPT set PROMPT=$P$G
 

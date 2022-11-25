@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Sushant Aryal\Programming\Project_WEBGIS\Backend\env"
+VIRTUAL_ENV="C:\Users\msi\Desktop\hackerdj\DisasterPortal\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
