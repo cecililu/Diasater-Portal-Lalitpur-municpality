@@ -1,0 +1,1 @@
+GEOGCS["Nepal_geographic", DATUM["D_Everest_Bangladesh", SPHEROID["Everest_Adjustment_1937", 6377276.345, 300.8017], TOWGS84[282.0, 726.0, 254.0, 0.0, 0.0, 0.0, 0.0]], PRIMEM["Greenwich", 0.0], UNIT["degree", 0.017453292519943295], AXIS["Longitude", EAST], AXIS["Latitude", NORTH], AUTHORITY["EPSG","8848"]]

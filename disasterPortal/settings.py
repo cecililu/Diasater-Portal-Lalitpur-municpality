@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_gis',
     'corsheaders',
     'django.contrib.gis',
+    'leaflet',
     'disasterapi',
+    'utility'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +86,6 @@ if os.name == 'nt':
     VENV_BASE = os.environ['VIRTUAL_ENV']
     os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
     os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
-##
 
 DATABASES = {
      'default': {
@@ -95,7 +97,6 @@ DATABASES = {
         "PORT":"5432"
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -131,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = r'^static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -139,4 +140,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+]
+
+LEAFLET_COFIG={
+    "DEFAULT_CENTER":(27,80),
+    "DEFAULT_ZOOM":5,
+
+}
+STATIC_ROOT = "static/"
+
+STATICFILES_DIRS = [    
+    BASE_DIR / "shapefile",
 ]

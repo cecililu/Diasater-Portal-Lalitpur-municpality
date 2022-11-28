@@ -18,5 +18,17 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/disaster", include("disasterapi.urls"))
+    
+    path("api/disaster", include("disasterapi.urls")),
+    path("api/utility/", include("utility.urls"))
 ]
+
+
+from django.conf import settings
+from django.contrib.staticfiles import views
+from django.urls import re_path
+
+if settings.DEBUG:
+    urlpatterns += [
+        re_path(r'^static/(?P<path>.*)$', views.serve),
+    ]
