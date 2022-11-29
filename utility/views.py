@@ -10,8 +10,8 @@ from django.contrib.gis.measure import D
 from osgeo import ogr
 import osgeo.osr as osr
 
+
 class getLocationsWithinDistance(APIView):
-    
     def post(self,request):
         print('posted')
         serializer=LocationSerializer(data=request.data)
@@ -25,10 +25,9 @@ class getLocationsWithinDistance(APIView):
                 # pnt=ogr.CreateGeometryFromWkt('POINT({} {})'.format(data['long'],data['lat']))
                 pnt=GEOSGeometry('POINT({} {})'.format(data['long'],data['lat']),srid=4326)
             
-                location=Location.objects.all().filter(point__distance_lte=(pnt, D(km=10000)))
+                location=Location.objects.all().filter(point__distance_lte=(pnt, D(km=1000)))
                 
-                datafrmt=[]
-                    
+                datafrmt=[]       
                 
                 
                 for item in location:
@@ -146,5 +145,4 @@ class getShapefile(APIView):
             as_attachment=True,
             filename='ReportTest.zip'
         )
-        
-                                          
+    
