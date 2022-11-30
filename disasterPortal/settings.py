@@ -161,7 +161,7 @@ SIMPLE_JWT={
     
     'REFRESH_TOKEN_LIFETIME':timedelta(days=1),
     
-    'ROTATE_REFRESH_ROKEN':False
+    'ROTATE_REFRESH_TOKEN':False
 }
 
 REST_FRAMEWORK = {
