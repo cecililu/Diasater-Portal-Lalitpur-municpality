@@ -153,9 +153,19 @@ STATICFILES_DIRS = [
     BASE_DIR / "shapefile",
 ]
 
+from datetime import timedelta
+
+SIMPLE_JWT={
+    
+    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=5),
+    
+    'REFRESH_TOKEN_LIFETIME':timedelta(days=1),
+    
+    'ROTATE_REFRESH_ROKEN':False
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-     
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
